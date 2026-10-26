@@ -1,6 +1,4 @@
-## ML Assignment-2
-## BITS ID: 2026AJ05485
-## Name: Tejasree Pakala
+## ML Assignment-2 | BITS ID: 2026AJ05485 | Name: Tejasree Pakala
 ## Dry Bean Classification Dashboard
 
 ## 1. Problem Statement
