@@ -1,4 +1,7 @@
-# Dry Bean Classification Dashboard
+## ML Assignment-2
+## BITS ID: 2026AJ05485
+## Name: Tejasree Pakala
+## Dry Bean Classification Dashboard
 
 ## 1. Problem Statement
 
@@ -18,8 +21,8 @@ The dataset is split into training and testing subsets using an 80:20 split, `ra
 
 ## 3. GitHub and Live Application
 
-- **GitHub repository:** [Add your public GitHub repository URL]
-- **Deployed Streamlit application:** [https://project-folder-2026aj05485.streamlit.app/]
+- **GitHub repository:** https://github.com/tejagitacc/project-folder
+- **Deployed Streamlit application:** https://project-folder-2026aj05485.streamlit.app/
 
 
 ## 4. Classification Models
