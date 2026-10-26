@@ -199,22 +199,34 @@ uploaded_file = st.file_uploader(
     ),
 )
 
-if uploaded_file is None:
-    st.info(
-        "Upload test_data.csv to begin. You can use the file generated "
-        "by train_models.py as your initial test."
-    )
+# Use the bundled test dataset by default so results appear immediately
+# when the app opens. If the evaluator uploads another CSV, evaluate that
+# file instead. Neither path retrains the saved models.
+if uploaded_file is not None:
+    data_source_label = f"Uploaded file: {uploaded_file.name}"
+    try:
+        test_df = pd.read_csv(uploaded_file)
+    except Exception as exc:
+        st.error(f"Unable to read the uploaded CSV: {exc}")
+        st.stop()
+else:
+    default_test_path = BASE_DIR / "test_data.csv"
+    data_source_label = "Default test dataset: test_data.csv"
 
-    st.subheader("Available saved models")
-    st.write(", ".join(models.keys()))
-    st.stop()
+    if not default_test_path.exists():
+        st.error(
+            "The default test_data.csv file was not found. "
+            "Please add it to the project root or upload a labelled test CSV."
+        )
+        st.stop()
 
-# Read and validate the uploaded CSV.
-try:
-    test_df = pd.read_csv(uploaded_file)
-except Exception as exc:
-    st.error(f"Unable to read the CSV file: {exc}")
-    st.stop()
+    try:
+        test_df = pd.read_csv(default_test_path)
+    except Exception as exc:
+        st.error(f"Unable to read the default test_data.csv: {exc}")
+        st.stop()
+
+st.caption(data_source_label)
 
 test_df.columns = test_df.columns.astype(str).str.strip()
 
