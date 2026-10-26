@@ -19,9 +19,8 @@ The dataset is split into training and testing subsets using an 80:20 split, `ra
 ## 3. GitHub and Live Application
 
 - **GitHub repository:** [Add your public GitHub repository URL]
-- **Deployed Streamlit application:** [Add your Streamlit Community Cloud URL]
+- **Deployed Streamlit application:** [https://project-folder-2026aj05485.streamlit.app/]
 
-Replace these placeholders with your actual links before submission.
 
 ## 4. Classification Models
 
